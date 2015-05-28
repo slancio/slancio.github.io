@@ -29,9 +29,7 @@
       return _.isEqual(board.sort(), solution.sort());
     };
 
-    if (compareGameArrays(boardPixelPositions, solutionPixelPositions)) {
-      alert("You win!");
-    }
+    return compareGameArrays(boardPixelPositions, solutionPixelPositions);
   };
 
   Board.prototype.toggle = function (pos) {

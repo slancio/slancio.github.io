@@ -13,12 +13,14 @@
 
   View.prototype.handleClickEvent = function () {
     var that = this;
-    this.$body.click( function (event) {
+    $('.cell').click( function (event) {
       var $pixel = $(event.target);
       var pos = [$pixel.data("y"), $pixel.data("x")];
       that.board.toggle(pos);
       that.render();
-      that.board.checkWinState();
+      if (that.board.checkWinState()) {
+        that.winBoard();
+      }
     });
   };
 
@@ -29,7 +31,7 @@
 
       this.solution.topHint[i].forEach( function (hint) {
         var $hintItem = $("<li></li>");
-        $hintItem.html('<strong>' + hint + '</strong>');
+        $hintItem.addClass('hint').html('<strong>' + hint + '</strong>');
         $hints.append($hintItem);
       });
 
@@ -43,7 +45,7 @@
 
       this.solution.leftHint[i].forEach( function (hint) {
         var $hintItem = $("<li></li>");
-        $hintItem.html('<strong>' + hint + '</strong>');
+        $hintItem.addClass('hint').html('<strong>' + hint + '</strong>');
         $hints.append($hintItem);
       });
 
@@ -61,6 +63,21 @@
 
     this.handleClickEvent();
   };
+
+  View.prototype.winBoard = function () {
+    this.board.blocks = [];
+    this.render();
+    $('.board-head').addClass('win-state');
+    $('.cell').addClass('win-state');
+    $('.hint').addClass('win-state');
+    $('body').append('<h1 class="win-state">You Win!</h1>')
+             .append('<form class="new-game win-state"><button>Play again?</button></form>');
+    $('.new-game').click( function (event) {
+      event.preventDefault();
+      location.reload();
+    });
+  };
+
 
   View.prototype.render = function () {
     $('.cell').removeClass("pixel block");

@@ -33,12 +33,13 @@ ul {
 /* Table */
 
 table {
-  width: 461px;
-  height: 461px;
+  width: 463px;
+  height: 463px;
   box-sizing: border-box;
   margin: auto;
   border-collapse: collapse;
   border-spacing: 0;
+  border: 1px solid black;
 }
 
 td, th {
@@ -70,7 +71,7 @@ th:first-child {
   border: 0;
 }
 
-td:hover {
+.cell:hover {
   cursor: pointer;
 }
 
@@ -95,7 +96,7 @@ strong {
   top: 0;
   bottom: 0;
   text-align: center;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 20px;
   height: 20px;
@@ -119,4 +120,48 @@ strong {
       rgba(0,0,0,1) 50%,
       rgba(0,0,0,0) calc(50% + 0.8px),
       rgba(0,0,0,0) 100%);
+}
+
+h1.win-state,
+form.win-state > button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  padding: 20px;
+  text-align: center;
+}
+
+.win-state.hint {
+  display: none;
+}
+
+.win-state.cell {
+  border: 0;
+}
+
+h1.win-state {
+  font-size: 96px;
+  margin: 20px auto;
+}
+
+form.win-state {
+  width: 300px;
+  margin: auto;
+}
+
+form.win-state > button {
+  font-size: 48px;
+}
+
+form.win-state > button {
+  background: white;
+  margin: auto;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+form.win-state > button:hover {
+  background: black;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
 }
