@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Nonograms</title>
+    <link rel="stylesheet" type="text/css" href="../css/nonogram.css">
+  </head>
+  <body>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="./js/underscore-min.js"></script>
+    <script src="./js/nonogram.js"></script>
+    <script src="./js/coord.js"></script>
+    <script src="./js/board.js"></script>
+    <script src="./js/nonoview.js"></script>
+
+    <script>
+      $(document).ready( function () {
+        var game = new Nonogram.Board();
+        var $board = $(".board");
+        window.view = new Nonogram.View(game, $board);
+        window.view.setupBoard();
+      });
+    </script>
+
+    <table class="board group">
+      <thead>
+        <tr class="board-head group">
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="board-body group">
+      </tbody>
+    </table>
+
+  </body>
+</html>

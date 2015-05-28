@@ -1,0 +1,122 @@
+/* RESET */
+
+html, body, head, table, strong,
+thead, tbody, tr, th, td, ul, li {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 100%;
+  text-decoration: inherit;
+  vertical-align: baseline;
+  box-sizing: inherit;
+}
+
+body {
+  line-height: 1;
+}
+
+ul {
+  list-style: none;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Table */
+
+table {
+  width: 461px;
+  height: 461px;
+  box-sizing: border-box;
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  display: block;
+  float: left;
+  width: 29px;
+  margin: 0.5px;
+}
+
+td {
+  display: block;
+  height: 30px;
+  border: 1px solid black;
+}
+
+th {
+  height: 160px;
+  position: relative;
+}
+
+th > ul {
+  position: absolute;
+  bottom: 0;
+}
+
+td:first-child,
+th:first-child {
+  width: 160px;
+  border: 0;
+}
+
+td:hover {
+  cursor: pointer;
+}
+
+ul {
+  float: right;
+}
+
+li {
+  width: 29px;
+  height: 29px;
+  margin: 0.5px;
+  display: block;
+  float: left;
+  position: relative;
+}
+
+strong {
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  height: 20px;
+}
+
+.pixel {
+  background: black;
+}
+
+.block {
+  background: 
+    linear-gradient(to top left,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0) calc(50% - 0.8px),
+      rgba(0,0,0,1) 50%,
+      rgba(0,0,0,0) calc(50% + 0.8px),
+      rgba(0,0,0,0) 100%),
+    linear-gradient(to top right,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0) calc(50% - 0.8px),
+      rgba(0,0,0,1) 50%,
+      rgba(0,0,0,0) calc(50% + 0.8px),
+      rgba(0,0,0,0) 100%);
+}
