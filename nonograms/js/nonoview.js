@@ -15,18 +15,6 @@
     this.lastPosition = [0,0];   // Set default starting position for key navigation
   };
 
-  View.prototype.updateBoard = function (type) {
-    if (typeof type === 'undefined') {
-      this.lastAction = this.board.toggle(this.lastPosition);
-    } else {
-      this.lastAction = this.board.draw(this.lastPosition, type);
-    }
-    this.render();
-    if (this.board.checkWinState()) {
-      this.winBoard();
-    }
-  };
-
   View.prototype.handleClickEvent = function () {
     var that = this;
 
@@ -40,7 +28,7 @@
       that.mouseActive = false;
     });
 
-    $('.cell').on('mousedown', function(event) {
+    $('.cell').on('mousedown', function (event) {
       that.mouseActive = true;
       var $pixel = $(event.target);
       that.lastPosition = [$pixel.data("y"), $pixel.data("x")];
@@ -51,7 +39,7 @@
       that.mouseActive = false;
     });
 
-    $('.cell').on('mouseenter', function(event) {
+    $('.cell').on('mouseenter', function (event) {
       var $pixel = $(event.target);
       that.lastPosition = [$pixel.data("y"), $pixel.data("x")];
       that.render();
@@ -62,6 +50,21 @@
 
     $('li.hint').on('click', function() {
       $(this).toggleClass('checked');
+    });
+
+    $('.clear-blocks').on('click', function (event) {
+      event.preventDefault();
+      that.resetBlocks();
+    });
+
+    $('.start-over').on('click', function (event) {
+      event.preventDefault();
+      that.resetBoard();
+    });
+
+    $('.new-game').on('click', function (event) {
+      event.preventDefault();
+      location.reload();
     });
   };
 
@@ -101,12 +104,15 @@
           }
         break;
         case 90:    //z
+        case 66:    //b
           this.updateBoard('pixel');    //draw pixel
         break;
         case 88:    //x
+        case 78:    //n
           this.updateBoard('block');    //draw block
         break;
         case 67:    //c
+        case 77:    //m
           this.updateBoard('');    //clear cell
         break;
         case 32:    //space
@@ -117,6 +123,18 @@
           return;
       }
     }.bind(this));
+  };
+
+  View.prototype.updateBoard = function (type) {
+    if (typeof type === 'undefined') {
+      this.lastAction = this.board.toggle(this.lastPosition);
+    } else {
+      this.lastAction = this.board.draw(this.lastPosition, type);
+    }
+    this.render();
+    if (this.board.checkWinState()) {
+      this.winBoard();
+    }
   };
 
   View.prototype.setupBoard = function () {
@@ -162,24 +180,37 @@
   };
 
   View.prototype.winBoard = function () {
-    this.board.blocks = [];
+    this.resetBlocks();
     this.render();
 
     // Prevent additional interactions with the game since it has already been completed
-    $('.cell').off('mouseup').off('mousedown').off('mouseenter');
+    $('.cell').off('mouseup').off('mousedown').off('mouseenter').off('click');
+    $('.board-resets').empty();
     $(document).unbind('keyup');
 
     $('.board-head').addClass('win-state');
     $('.cell').addClass('win-state').removeClass('highlight');
     $('.hint').addClass('win-state');
     $('body').append('<h1 class="win-state">You Win!</h1>')
-             .append('<form class="new-game win-state"><button>Play again?</button></form>');
+             .append('<form class="new-game win-state"><button>New game?</button></form>');
     $('.new-game').click( function (event) {
       event.preventDefault();
       location.reload();
     });
   };
 
+  View.prototype.resetBoard = function () {
+    this.board.clearBoard();
+    this.mouseActive  = false;
+    this.lastAction   = 'pixel';
+    this.lastPosition = [0,0];
+    this.render();
+  };
+
+  View.prototype.resetBlocks = function () {
+    this.board.clearBlocks();
+    this.render();
+  };
 
   View.prototype.render = function () {
     $('.cell').removeClass("pixel block highlight");

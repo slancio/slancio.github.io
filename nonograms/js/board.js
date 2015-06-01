@@ -63,6 +63,19 @@
     return type;
   };
 
+  Board.prototype.clearBoard = function () {
+    this.clearBlocks();
+    this.clearPixels();
+  };
+
+  Board.prototype.clearBlocks = function () {
+    this.blocks = [];
+  };
+
+  Board.prototype.clearPixels = function () {
+    this.pixels = [];
+  };
+
   Board.prototype.addPixel = function (pos) {
     this.pixels.push(new Nonogram.Coord([pos[0], pos[1]]));
   };
