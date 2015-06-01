@@ -32,14 +32,36 @@
     return compareGameArrays(boardPixelPositions, solutionPixelPositions);
   };
 
-  Board.prototype.toggle = function (pos) {
+  Board.prototype.toggle = function (pos, type) {
+    if (typeof type != 'undefined') {
+      this.removePixel(pos);
+      switch(type) {
+        case 'block':
+          this.addBlock(pos);
+        break;
+        case '':
+          this.removeBlock(pos);
+        break;
+        case 'pixel':
+          this.addPixel(pos);
+        break;
+        default:
+          return '';
+        break;
+      }
+      return type;
+    }
+
     if (this.isPixel(pos)) {
       this.removePixel(pos);
       this.addBlock(pos);
+      return 'block';
     } else if (this.isBlock(pos)) {
       this.removeBlock(pos);
+      return '';
     } else {
       this.addPixel(pos);
+      return 'pixel';
     }
   };
 

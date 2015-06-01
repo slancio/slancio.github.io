@@ -9,18 +9,53 @@
     this.solution = board.solution;
     this.$head = $el.find('.board-head');
     this.$body = $el.find('.board-body');
+
+    this.mouseActive = false;   // Used to track whether a mouse is being dragged over multiple cells
+    this.lastAction  = 'pixel'; // What to switch each dragged cell to when being dragged over
   };
 
   View.prototype.handleClickEvent = function () {
     var that = this;
-    $('.cell').click( function (event) {
+
+    $('.board').on('mousedown', function() {
+      that.mouseActive = true;
+    });
+
+    $('.board').on('mouseup', function() {
+      that.mouseActive = false;
+    }).on('mouseleave', function() {
+      that.mouseActive = false;
+    });
+
+    $('.cell').on('mousedown', function(event) {
+      that.mouseActive = true;
       var $pixel = $(event.target);
       var pos = [$pixel.data("y"), $pixel.data("x")];
-      that.board.toggle(pos);
+      that.lastAction = that.board.toggle(pos);
       that.render();
       if (that.board.checkWinState()) {
         that.winBoard();
       }
+    });
+
+    $('.cell').on('mouseup', function() {
+      that.mouseActive = false;
+    });
+
+    $('.cell').on('mouseenter', function(event) {
+      if (that.mouseActive) {
+        var $pixel = $(event.target);
+        var pos = [$pixel.data("y"), $pixel.data("x")];
+        that.board.toggle(pos, that.lastAction);
+        that.render();
+        if (that.board.checkWinState()) {
+          that.winBoard();
+        }
+      }
+    });
+
+    $('li.hint').on('click', function() {
+      $(this).toggleClass('checked');
     });
   };
 
@@ -31,7 +66,7 @@
 
       this.solution.topHint[i].forEach( function (hint) {
         var $hintItem = $("<li></li>");
-        $hintItem.addClass('hint').html('<strong>' + hint + '</strong>');
+        $hintItem.addClass('hint').text(hint);
         $hints.append($hintItem);
       });
 
@@ -45,7 +80,7 @@
 
       this.solution.leftHint[i].forEach( function (hint) {
         var $hintItem = $("<li></li>");
-        $hintItem.addClass('hint').html('<strong>' + hint + '</strong>');
+        $hintItem.addClass('hint').text(hint);
         $hints.append($hintItem);
       });
 
@@ -67,6 +102,10 @@
   View.prototype.winBoard = function () {
     this.board.blocks = [];
     this.render();
+
+    // Prevent additional interactions with the game since it has already been completed
+    $('.cell').off('mouseup').off('mousedown').off('mouseenter');
+
     $('.board-head').addClass('win-state');
     $('.cell').addClass('win-state');
     $('.hint').addClass('win-state');

@@ -14,6 +14,12 @@ thead, tbody, tr, th, td, ul, li {
   text-decoration: inherit;
   vertical-align: baseline;
   box-sizing: inherit;
+
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  -o-user-select: none;
+  user-select: none;    
 }
 
 body {
@@ -88,20 +94,6 @@ li {
   position: relative;
 }
 
-strong {
-  position: absolute;
-  margin: auto;
-  width: 100%;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  height: 20px;
-}
-
 .pixel {
   background: black;
 }
@@ -122,6 +114,27 @@ strong {
       rgba(0,0,0,0) 100%);
 }
 
+li.hint {
+  cursor: pointer;
+  font-family: "Roboto",sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  height: 30px;
+  margin: auto;
+  width: 30px;
+  text-align: center;
+  padding-top: 6px;
+  width: 30px;
+}
+
+li.hint:hover {
+  background-color: #eee;
+}
+
+li.hint.checked {
+  color: #aaa;
+}
+
 h1.win-state,
 form.win-state > button {
   font-family: 'Roboto', sans-serif;
@@ -136,6 +149,7 @@ form.win-state > button {
 
 .win-state.cell {
   border: 0;
+  cursor: default;
 }
 
 h1.win-state {
