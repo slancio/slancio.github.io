@@ -32,26 +32,7 @@
     return compareGameArrays(boardPixelPositions, solutionPixelPositions);
   };
 
-  Board.prototype.toggle = function (pos, type) {
-    if (typeof type != 'undefined') {
-      this.removePixel(pos);
-      switch(type) {
-        case 'block':
-          this.addBlock(pos);
-        break;
-        case '':
-          this.removeBlock(pos);
-        break;
-        case 'pixel':
-          this.addPixel(pos);
-        break;
-        default:
-          return '';
-        break;
-      }
-      return type;
-    }
-
+  Board.prototype.toggle = function (pos) {
     if (this.isPixel(pos)) {
       this.removePixel(pos);
       this.addBlock(pos);
@@ -63,6 +44,23 @@
       this.addPixel(pos);
       return 'pixel';
     }
+  };
+
+  Board.prototype.draw = function (pos, type) {
+    this.removePixel(pos);
+    this.removeBlock(pos);
+    switch(type) {
+      case 'block':
+        this.addBlock(pos);
+      break;
+      case 'pixel':
+        this.addPixel(pos);
+      break;
+      default:
+        return '';
+    }
+
+    return type;
   };
 
   Board.prototype.addPixel = function (pos) {
