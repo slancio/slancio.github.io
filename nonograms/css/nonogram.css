@@ -78,24 +78,18 @@ header > h4 {
 }
 
 aside {
-  text-align: center;
+  text-align: justify;
   width: 700px;
   margin: auto;
   font-family: 'Roboto', sans-serif;
 }
 
-aside > strong {
-  font-weight: 700;
-  padding-bottom: 5px;
-  display: block;
+aside strong {
+  font-style: italic ;
 }
 
 aside > p {
-  padding-bottom: 10px;
-}
-
-aside > p:first-child {
-  text-align: justify;
+  padding-bottom: 20px;
 }
 
 aside > p > a {
@@ -109,6 +103,7 @@ aside > p > a:hover {
 .hide {
   display: none;
 }
+
 /* Table */
 
 table {

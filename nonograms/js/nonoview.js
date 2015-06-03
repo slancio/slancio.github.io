@@ -72,8 +72,12 @@
       var $howTo = $('.how-to-text');
       if ($howTo.hasClass('hide')) {
         $howTo.removeClass('hide');
+        $('.board').addClass('hide');
+        $('.board-resets').addClass('hide');
       } else {
         $howTo.addClass('hide');
+        $('.board').removeClass('hide');
+        $('.board-resets').removeClass('hide');
       }
     });
   };
