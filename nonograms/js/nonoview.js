@@ -66,6 +66,16 @@
       event.preventDefault();
       location.reload();
     });
+
+    $('.how-to').on('click', function (event) {
+      event.preventDefault();
+      var $howTo = $('.how-to-text');
+      if ($howTo.hasClass('hide')) {
+        $howTo.removeClass('hide');
+      } else {
+        $howTo.addClass('hide');
+      }
+    });
   };
 
   View.prototype.handleKeyEvent = function () {
@@ -185,6 +195,7 @@
 
     // Prevent additional interactions with the game since it has already been completed
     $('.cell').off('mouseup').off('mousedown').off('mouseenter').off('click');
+    $('.how-to').off('click');
     $('.board-resets').empty();
     $(document).unbind('keyup');
 
