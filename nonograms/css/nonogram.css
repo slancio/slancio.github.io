@@ -94,6 +94,10 @@ aside > p {
   padding-bottom: 10px;
 }
 
+aside > p:first-child {
+  text-align: justify;
+}
+
 aside > p > a {
   font-weight: 700;
 }
