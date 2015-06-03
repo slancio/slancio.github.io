@@ -74,10 +74,12 @@
         $howTo.removeClass('hide');
         $('.board').addClass('hide');
         $('.board-resets').addClass('hide');
+        $('.how-to').text('Back To Game');
       } else {
         $howTo.addClass('hide');
         $('.board').removeClass('hide');
         $('.board-resets').removeClass('hide');
+        $('.how-to').text('How To Play');
       }
     });
   };
