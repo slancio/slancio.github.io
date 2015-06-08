@@ -1,3 +1,1 @@
-# Eric Savadian's Github page
-
-Not much going on here, just setting up a personal github page.
+A Github Pages repo for Eric Savadian's Portfolio
