@@ -29,30 +29,19 @@ ul {
   list-style: none;
 }
 
-header {
-  font-size: 36px;
-  font-weight: 700;
-  /*width: 199px;*/
-  margin: auto;
-  color: black;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
 .board {
   padding: 40px;
   margin: auto;
-  width: 800px;
-  height: 800px;
-
+  width: 500px;
+  height: 500px;
 }
 
 .board > li {
   display: block;
   float: left;
   background: #eee;
-  width: 38px;  /* make 40px */
-  height: 38px; /* make 40px */
+  width: 23px;  /* make 25px */
+  height: 23px; /* make 25px */
   border: 1px dotted #aaa; /* TODO: remove after troubleshooting */
 }
 
@@ -62,4 +51,29 @@ header {
 
 .board > .apple {
   background: #f00;
+}
+
+.scoreboard {
+  margin: auto;
+  width: 500px;
+  background: white;
+  margin: 0 auto;
+  font-family: sans-serif;
+  font-size: 28px;
+  display: block;
+}
+
+.scoreboard > li {
+  padding: 5px;
+}
+
+.score {
+  float: left;
+  color: black;
+}
+
+.bonus-score {
+  float: right;
+  color: green;
+
 }

@@ -65,9 +65,12 @@
 
   View.prototype.gameOver = function () {
     clearInterval(this.timer);
+    this.board.snake.bonusScore = 0;
     $(document).off('keydown');
-    this.$el.on('click', function () {
-      location.reload();
+    this.$el.one('click', function () {
+      this.$el.empty();
+      this.board = new Snake.Board();
+      this.setupBoard();
     }.bind(this));
   };
 
@@ -83,6 +86,8 @@
         $child.addClass("apple");
       }
     }
+    $('.score').text("Score: " + this.board.snake.score);
+    $('.bonus-score').text("Bonus: " + this.board.snake.bonusScore);
 
   };
 
