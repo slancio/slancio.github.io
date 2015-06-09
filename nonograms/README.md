@@ -4,7 +4,7 @@ An implementation of the classic nonograms logic puzzle in JavaScript.
 
 ## Getting Started
 
-To run this project, either open up `index.html` in your favorite web browser, or [click here](https://slancio.github.io/nonograms/) to play the live version.
+To run this project, either open up `index.html` in your favorite web browser, or [click here](https://ericsavadian.com/nonograms/) to play the live version.
 
 ## How to Play
 
