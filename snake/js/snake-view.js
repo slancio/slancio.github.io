@@ -67,6 +67,7 @@
     clearInterval(this.timer);
     this.board.snake.bonusScore = 0;
     $(document).off('keydown');
+    this.$el.append("<strong>Game Over</strong><strong><br><br><br>Click to Play Again</strong>");
     this.$el.one('click', function () {
       this.$el.empty();
       this.board = new Snake.Board();
