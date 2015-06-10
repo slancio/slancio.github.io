@@ -14,7 +14,7 @@
   };
 
   View.prototype.handleKeyEvent = function () {
-    $(document).on('keydown', function (event) {
+    $(document).one('keydown', function (event) {
       switch(event.which) {
         case 87:
         case 73:
@@ -48,6 +48,7 @@
     }
 
     var tick = function () {
+      this.handleKeyEvent();
       var newCoord = this.board.getMove();
       if (newCoord === -1) {
         this.gameOver();
@@ -60,7 +61,7 @@
     this.render();
     this.handleKeyEvent();
 
-    this.timer = setInterval(tick.bind(this), 100);
+    this.timer = setInterval(tick.bind(this), 80);
   };
 
   View.prototype.gameOver = function () {
