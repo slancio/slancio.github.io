@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/kaosaur
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://ericsavadian.com
+  * I am kaosaur (https://keybase.io/kaosaur) on keybase.
+  * I have a public key ASA3Ml1qDJem-H_G8BglLbq0ZHOtEQxjjYRZjIXJ2ynEzQo
+
+To do so, I am signing this object:
+
+{
+    &quot;body&quot;: {
+        &quot;key&quot;: {
+            &quot;eldest_kid&quot;: &quot;012037325d6a0c97a6f87fc6f018252dbab46473ad110c638d84598c85c9db29c4cd0a&quot;,
+            &quot;host&quot;: &quot;keybase.io&quot;,
+            &quot;kid&quot;: &quot;012037325d6a0c97a6f87fc6f018252dbab46473ad110c638d84598c85c9db29c4cd0a&quot;,
+            &quot;uid&quot;: &quot;6501331f03a6f5cdf09d642671a70019&quot;,
+            &quot;username&quot;: &quot;kaosaur&quot;
+        },
+        &quot;merkle_root&quot;: {
+            &quot;ctime&quot;: 1500837246,
+            &quot;hash&quot;: &quot;936878c550659b0177366add80d196b2788aa9ece4b358e63b45f773276673ee9ecca7f32b76a3ba117d487f2b74036b1c83f8ae15aec29f3027f3e9e2b0bd0c&quot;,
+            &quot;hash_meta&quot;: &quot;a3394baf8420c28ced82c1537e4847d62e3663f4b74b50dee09efd7b93ce37d7&quot;,
+            &quot;seqno&quot;: 1274407
+        },
+        &quot;service&quot;: {
+            &quot;hostname&quot;: &quot;ericsavadian.com&quot;,
+            &quot;protocol&quot;: &quot;http:&quot;
+        },
+        &quot;type&quot;: &quot;web_service_binding&quot;,
+        &quot;version&quot;: 1
+    },
+    &quot;client&quot;: {
+        &quot;name&quot;: &quot;keybase.io go client&quot;,
+        &quot;version&quot;: &quot;1.0.25&quot;
+    },
+    &quot;ctime&quot;: 1500837371,
+    &quot;expire_in&quot;: 504576000,
+    &quot;prev&quot;: &quot;f3e928c4f34817aec3ed34f4da90f6376d94a052251fea92a63969a931299d27&quot;,
+    &quot;seqno&quot;: 11,
+    &quot;tag&quot;: &quot;signature&quot;
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgNzJdagyXpvh/xvAYJS26tGRzrREMY42EWYyFydspxM0Kp3BheWxvYWTFA0d7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMzczMjVkNmEwYzk3YTZmODdmYzZmMDE4MjUyZGJhYjQ2NDczYWQxMTBjNjM4ZDg0NTk4Yzg1YzlkYjI5YzRjZDBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMzczMjVkNmEwYzk3YTZmODdmYzZmMDE4MjUyZGJhYjQ2NDczYWQxMTBjNjM4ZDg0NTk4Yzg1YzlkYjI5YzRjZDBhIiwidWlkIjoiNjUwMTMzMWYwM2E2ZjVjZGYwOWQ2NDI2NzFhNzAwMTkiLCJ1c2VybmFtZSI6Imthb3NhdXIifSwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE1MDA4MzcyNDYsImhhc2giOiI5MzY4NzhjNTUwNjU5YjAxNzczNjZhZGQ4MGQxOTZiMjc4OGFhOWVjZTRiMzU4ZTYzYjQ1Zjc3MzI3NjY3M2VlOWVjY2E3ZjMyYjc2YTNiYTExN2Q0ODdmMmI3NDAzNmIxYzgzZjhhZTE1YWVjMjlmMzAyN2YzZTllMmIwYmQwYyIsImhhc2hfbWV0YSI6ImEzMzk0YmFmODQyMGMyOGNlZDgyYzE1MzdlNDg0N2Q2MmUzNjYzZjRiNzRiNTBkZWUwOWVmZDdiOTNjZTM3ZDciLCJzZXFubyI6MTI3NDQwN30sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJlcmljc2F2YWRpYW4uY29tIiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4yNSJ9LCJjdGltZSI6MTUwMDgzNzM3MSwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsInByZXYiOiJmM2U5MjhjNGYzNDgxN2FlYzNlZDM0ZjRkYTkwZjYzNzZkOTRhMDUyMjUxZmVhOTJhNjM5NjlhOTMxMjk5ZDI3Iiwic2Vxbm8iOjExLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQOr5avn00/qoy6+6D3dY83AL2ggZwMSNFEfO3ZBFSbvMJdT1brdTu6i5zhTidMHDPrBbMjZriFfNGyHcqp9IYQyoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCDUMmlpELJ6C/Tx/hANu/JcNVB86T3yn6hGLoCei8ytLaN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/kaosaur
+
+==================================================================
